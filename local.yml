@@ -23,3 +23,24 @@
       owner: chaos
       group: chaos
 
+
+  - name: add ansible user
+    user:
+      name: ansiblor
+      system: yes
+
+  - name: set up sudo for ansible user
+    copy:
+      src: files/sudoer_ansiblor
+      dest: /etc/sudoers.d/ansiblor
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: add ansible-pull cron job
+    cron:
+      name: ansible auto-provision
+      user: ansiblor
+      minute: "*/10"
+      job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
+
