@@ -5,6 +5,13 @@
 
 
   tasks:
-  - name: install htop
+  - name: install packages
     package:
-      name: htop
+      name: 
+        - htop
+        - fd
+        - bat
+        - zoxide
+        - ripgrep
+        - repgrep
+        - ripgrep-all
