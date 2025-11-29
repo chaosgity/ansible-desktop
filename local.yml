@@ -19,7 +19,7 @@
   - name: copy .bashrc file
     copy:
       src: files/bashrc
-      dest: /home/chaos/,bashrc
+      dest: /home/chaos/.bashrc
       owner: chaos
       group: chaos
 
