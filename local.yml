@@ -15,6 +15,7 @@
         - ripgrep
         - repgrep
         - ripgrep-all
+        - cronie
 
   - name: copy .bashrc file
     copy:
