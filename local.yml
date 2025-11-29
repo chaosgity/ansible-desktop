@@ -43,5 +43,5 @@
       name: ansible auto-provision
       user: ansiblor
       minute: "*/10"
-      job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
+      job: ansible-pull --vault-password-file ~/.vault/vault_key -o -U https://github.com/chaosgity/ansible-desktop.git
 
