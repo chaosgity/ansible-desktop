@@ -59,7 +59,6 @@
       name: "newuser"
       state: present
       shell: /bin/bash
-      groups: "sudo"
       create_home: yes
       password: "{{ newuser_pass | password_hash('sha512') }}"
 
