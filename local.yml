@@ -2,6 +2,14 @@
 - hosts: localhost
   connection: local
   become: true
+  vars:
+    newuser_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          33306135336635366336663832636432333133646133633263613531383165383937666438613033
+          6635613461333463616466613263626533376530366364630a336363636462353361656332323933
+          31613332333566303161353364363364323031386430313535373133376130626637313235343431
+          3331636466646130390a646264613635323730313063643061326262656534306430663236656361
+          6162
 
 
   tasks:
@@ -44,4 +52,14 @@
       user: ansiblor
       minute: "*/10"
       job: ansible-pull --vault-password-file ~/.vault/vault_key -o -U https://github.com/chaosgity/ansible-desktop.git
+
+
+  - name: Add new user
+    ansible.builtin.user:
+      name: "newuser"
+      state: present
+      shell: /bin/bash
+      groups: "sudo"
+      create_home: yes
+      password: "{{ newuser_pass | password_hash('sha512') }}"
 
