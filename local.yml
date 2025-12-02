@@ -24,6 +24,7 @@
         - repgrep
         - ripgrep-all
         - cronie
+        - python-passlib
 
   - name: copy .bashrc file
     copy:
@@ -54,11 +55,9 @@
       job: ansible-pull --vault-password-file ~/.vault/vault_key -o -U https://github.com/chaosgity/ansible-desktop.git
 
 
-  - name: Add new user
+  - name: Remove user newuser
     ansible.builtin.user:
       name: "newuser"
-      state: present
-      shell: /bin/bash
-      create_home: yes
-      password: "{{ newuser_pass | password_hash('sha512') }}"
+      state: absent
+      remove: yes
 
