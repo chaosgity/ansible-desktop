@@ -26,13 +26,6 @@
         - cronie
         - python-passlib
 
-  - name: copy .bashrc file
-    copy:
-      src: files/bashrc
-      dest: /home/chaos/.bashrc
-      owner: chaos
-      group: chaos
-
 
   - name: add ansible user
     user:
