@@ -18,4 +18,5 @@
         - cronie
         - python-passlib
         - apparmor
+        - vivid
 
