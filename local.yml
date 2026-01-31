@@ -17,4 +17,5 @@
         - ripgrep-all
         - cronie
         - python-passlib
+        - apparmor
 
