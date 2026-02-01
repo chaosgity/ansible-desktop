@@ -3,22 +3,22 @@
   connection: local
   become: true
 
+  pre_tasks:
 
-  tasks:
-  - name: install packages
-    package:
-      name: 
-        - htop
-        - fd
-        - bat
-        - zoxide
-        - ripgrep
-        - repgrep
-        - ripgrep-all
-        - cronie
-        - python-passlib
-        - apparmor
-        - vivid
+    - name: install packages
+      package:
+        name: 
+          - htop
+          - fd
+          - bat
+          - zoxide
+          - ripgrep
+          - repgrep
+          - ripgrep-all
+          - cronie
+          - python-passlib
+          - apparmor
+          - vivid
 
    roles:
      - { role: desktop, tags: desktop }
