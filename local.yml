@@ -20,3 +20,5 @@
         - apparmor
         - vivid
 
+   roles:
+     - { role: desktop, tags: desktop }

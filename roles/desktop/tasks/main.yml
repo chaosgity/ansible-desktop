@@ -1,0 +1,12 @@
+---
+- name: install audio packages
+  pacman:
+    name:
+      - pipewire
+      - pipewire-pulse
+      - pipewire-alsa
+      - wireplumber
+      - pavucontrol
+      - pamixer
+      - alsa-utils
+    state: present
