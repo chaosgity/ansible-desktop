@@ -12,4 +12,9 @@
       - cronie
       - python-passlib
       - vivid
+      - apparmor
+      - audit
+      - python-notify2
+      - python-psutil
+      - udisks2
     state: present
