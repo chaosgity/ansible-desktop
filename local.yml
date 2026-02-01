@@ -3,22 +3,5 @@
   connection: local
   become: true
 
-  pre_tasks:
-
-    - name: install packages
-      package:
-        name: 
-          - htop
-          - fd
-          - bat
-          - zoxide
-          - ripgrep
-          - repgrep
-          - ripgrep-all
-          - cronie
-          - python-passlib
-          - apparmor
-          - vivid
-
-   roles:
-     - { role: desktop, tags: desktop }
+  roles:
+    - { role: desktop, tags: desktop }
