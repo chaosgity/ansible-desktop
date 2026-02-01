@@ -1,0 +1,15 @@
+---
+- name: isntall base packages
+  pacman:
+    name:
+      - htop
+      - fd
+      - bat
+      - zoxide
+      - ripgrep
+      - ripgrep-all
+      - repgrep
+      - cronie
+      - python-passlib
+      - vivid
+    state: present
