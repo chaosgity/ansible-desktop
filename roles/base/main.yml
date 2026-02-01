@@ -1,20 +1,33 @@
 ---
-- name: isntall base packages
+- name: install base packages
   pacman:
     name:
+      - cronie
+      - fzf
       - htop
-      - fd
+      - python-passlib
+      - udisks2
+    state: present
+
+- name: install base packages (Rust CLI)
+  pacman:
+    name:
       - bat
-      - zoxide
+      - bat-extras
+      - eza
+      - fd
       - ripgrep
       - ripgrep-all
       - repgrep
-      - cronie
-      - python-passlib
       - vivid
+      - zoxide
+    state: present
+
+- name: install base packages (apparmor)
+  pacman:
+    name:
       - apparmor
       - audit
       - python-notify2
       - python-psutil
-      - udisks2
     state: present
