@@ -3,4 +3,4 @@
 - name: copie .bashrc file
   copy:
     src: files/bashrc
-    dest: ~/
+    dest: ~/.bashrc
