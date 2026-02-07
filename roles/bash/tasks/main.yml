@@ -4,3 +4,5 @@
   copy:
     src: files/bashrc
     dest: ~/.bashrc
+    owner: chaos
+    group: chaos
