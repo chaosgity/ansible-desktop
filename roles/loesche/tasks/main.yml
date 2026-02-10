@@ -1,0 +1,16 @@
+---
+
+- name: create loesche config dir
+  file:
+   path: "/home/{{ user_name }}/.config/loesche"
+   state: directory
+   owner: "{{ user_name }}"
+   group: "{{ user_group }}"
+
+- name: copy loesche config file
+  copy:
+    src: loesche.conf
+    dest: "/home/{{ user_name }}/.config/loesche"
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+
