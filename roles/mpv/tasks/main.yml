@@ -1,7 +1,7 @@
 ---
 
--name: create mpv config dir
- file:
+- name: create mpv config dir
+  file:
    path: ~/.config/mpv
    state: directory
 
