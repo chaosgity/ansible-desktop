@@ -10,3 +10,8 @@
       - pamixer
       - alsa-utils
     state: present
+
+- name: install applications packages
+  pacman:
+    name:
+      - mpv
