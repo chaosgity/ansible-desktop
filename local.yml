@@ -7,3 +7,4 @@
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: bash, tag: bash }
+    - { role: mpv, tag: mpv }
