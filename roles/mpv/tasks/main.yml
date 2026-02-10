@@ -2,7 +2,7 @@
 
 - name: create mpv config dir
   file:
-   path: /home/chaos/.config/mpv
+   path: "/home/{{ user_name }}/.config/mpv"
    state: directory
    owner: "{{ user_name }}"
    group: "{{ user_group }}"
@@ -10,7 +10,7 @@
 - name: copy mpv config file
   copy:
     src: mpv.conf
-    dest: /home/chaos/.config/mpv
+    dest: "/home/{{ user_name }}/.config/mpv"
     owner: "{{ user_name }}"
     group: "{{ user_group }}"
 
