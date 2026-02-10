@@ -8,4 +8,3 @@
     - { role: desktop, tags: desktop }
     - { role: bash, tag: bash }
     - { role: mpv, tag: mpv }
-    - { role: loesche, tag: loesche }
