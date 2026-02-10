@@ -2,7 +2,7 @@
 
 - name: create mpv config dir
   file:
-   path: ~/.config/mpv
+   path: /home/chaos/.config/mpv
    state: directory
    owner: chaos
    group: chaos
@@ -10,7 +10,7 @@
 - name: copy mpv config file
   copy:
     src: mpv.conf
-    dest: ~/.config/mpv
+    dest: /home/chaos/.config/mpv
     owner: chaos
     group: chaos
 
