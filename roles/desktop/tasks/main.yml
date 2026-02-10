@@ -15,3 +15,4 @@
   pacman:
     name:
       - mpv
+    state: present
