@@ -12,6 +12,7 @@
 
   roles:
     - { role: base, tags: base }
+    - { role: cronie, tags: cronie }
     - { role: desktop, tags: desktop }
     - { role: bash, tag: bash }
     - { role: mpv, tag: mpv }
