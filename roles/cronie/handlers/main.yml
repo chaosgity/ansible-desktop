@@ -1,7 +1,7 @@
 ---
 - name: enable cronie
-  systemd:
+  systemd.service:
     name: cronie
     state: started
-    daemon_reload: yes
-    enabled: yes
+    daemon_reload: true
+    enabled: true
