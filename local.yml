@@ -10,6 +10,12 @@
       tags: always
       shell: mount -o remount,size=5G,noatime /tmp
 
+    - name: Enable and start cronie.service
+      systemd_service:
+        name: cronie.service
+        state: started
+        enabled: true
+
   roles:
     - { role: base, tags: base }
     - { role: cronie, tags: cronie }

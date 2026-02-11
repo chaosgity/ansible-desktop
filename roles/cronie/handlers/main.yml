@@ -1,5 +1,6 @@
 ---
 - name: enable cronie
+  become_user: chaos
   systemd_service:
     name: cronie
     state: started
