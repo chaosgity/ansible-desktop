@@ -3,6 +3,13 @@
   connection: local
   become: true
 
+  pre_tasks:
+
+    # Fix full /tmp when installing lots of AUR
+    - name: temp increase /tmp size
+      tags: always
+      shell: mount -o remount,size=5G,noatime /tmp
+
   roles:
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
