@@ -31,7 +31,7 @@
 - name: copy aliases file
   copy:
     src: files/aliases
-    dest: "home/{{ user_name }}/.aliases"
+    dest: "/home/{{ user_name }}/.aliases"
     owner: "{{ user_name }}"
     group: "{{ user_group }}"
 
@@ -45,14 +45,14 @@
 - name: copy bash_functions file
   copy:
     src: files/flavor-light
-    dest: "home/{{ user_name }}/.bash_functions/flavor-light"
+    dest: "/home/{{ user_name }}/.bash_functions/flavor-light"
     owner: "{{ user_name }}"
     group: "{{ user_group }}"
 
 - name: copy bash_functions file
   copy:
     src: files/yazi-bash-wrapper
-    dest: "home/{{ user_name }}/.bash_functions/yazi-bash-wrapper"
+    dest: "/home/{{ user_name }}/.bash_functions/yazi-bash-wrapper"
     owner: "{{ user_name }}"
     group: "{{ user_group }}"
 
