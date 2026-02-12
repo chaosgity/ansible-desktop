@@ -2,7 +2,6 @@
 - name: install base packages
   pacman:
     name:
-      - cronie
       - fzf
       - htop
       - python-passlib
