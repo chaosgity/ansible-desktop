@@ -1,0 +1,21 @@
+---
+- name: add ansible user
+  user:
+    name: velo
+    system: true
+
+- name: setup sudo for ansible user
+  copy:
+    src: files/sudoer_velo
+    dest: /etc/sudoers.d/velo
+    owener: root
+    group: root
+    mode: 0440
+
+- name: add ansible-pull cron job
+  cron:
+    name: ansible auto-provision
+    user: velo
+    minute: "*/10"
+    job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
+    state: present

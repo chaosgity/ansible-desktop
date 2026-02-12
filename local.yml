@@ -11,8 +11,9 @@
       shell: mount -o remount,size=5G,noatime /tmp
 
   roles:
+    - { role: ansible_user, tags: asnible_user }
     - { role: base, tags: base }
+    - { role: bash, tag: bash }
     - { role: cronie, tags: cronie }
     - { role: desktop, tags: desktop }
-    - { role: bash, tag: bash }
     - { role: mpv, tag: mpv }
