@@ -1,0 +1,6 @@
+---
+- name: install rustup package
+  pacman:
+    name: rustup
+    state: present
+  notify: enable toolchains  

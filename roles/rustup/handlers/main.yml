@@ -1,0 +1,4 @@
+---
+- name: enable toolchains
+  become_user: "{{ user_name }}"
+  shell: rustup default stable
