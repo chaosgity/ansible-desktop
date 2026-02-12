@@ -1,8 +1,7 @@
 ---
 - name: enable cronie
-  become_user: chaos
   systemd_service:
-    name: cronie
+    name: cronie.service
     state: started
     daemon_reload: true
     enabled: true
