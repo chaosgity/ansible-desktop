@@ -8,7 +8,7 @@
   copy:
     src: files/sudoer_velo
     dest: /etc/sudoers.d/velo
-    owener: root
+    owner: root
     group: root
     mode: 0440
 
