@@ -10,6 +10,11 @@
       tags: always
       shell: mount -o remount,size=5G,noatime /tmp
 
+    - name: install reflector package
+      pacman:
+        name: reflector
+        state: present
+
   roles:
     - { role: pacman, tags: pacman }
     - { role: ansible_user, tags: ansible_user }
