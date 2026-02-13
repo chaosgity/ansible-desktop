@@ -3,6 +3,10 @@
   connection: local
   become: true
 
+  vars:
+    user: chaos
+    shell: /usr/bin/bash
+
   pre_tasks:
 
     # Fix full /tmp when installing lots of AUR
