@@ -1,7 +1,10 @@
-- name: Add ansible-aur module as a a submodule
+- name: Add ansible-aur module as a submodule
   git:
     repo: git@github.com:kewlfft/ansible-aur.git
     path: "/home/{{ user_name }}/DEV/ansible-desktop/plugins/modules/aur"
     submodule: yes
     recursive: yes
+    accept_hostkey: no
+    track_submodules: no
     force: yes
+  register: result
