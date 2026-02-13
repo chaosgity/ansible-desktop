@@ -1,4 +1,6 @@
 ---
 - name: enable toolchains
   become_user: "{{ user_name }}"
-  shell: rustup default stable
+  shell: |
+    chmod 764 $HOME/.ansible/tmp
+    rustup default stable
