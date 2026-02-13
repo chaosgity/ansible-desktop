@@ -18,6 +18,7 @@
   roles:
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
+    - { role: ansible-aur, tags: ansible-aur }
     - { role: cronie, tags: cronie }
     - { role: ansible_user, tags: ansible_user }
     - { role: base, tags: base }
