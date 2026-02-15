@@ -1,0 +1,21 @@
+---
+- name: create aur_builder user
+  become: yes
+  block:
+    - ansible.builtin.user:
+        name: aur_builder
+        group: wheel
+    - ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/11-install-aur_builder
+        state: present
+        line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+        validate: /usr/sbin/visudo -cf %s
+        create: yes
+
+- name: install AUR helper
+  kewlfft.aur.aur:
+    name: paru
+    use: makepkg
+    skip_installed: true
+  become: yes
+  become_user: aur_builder
