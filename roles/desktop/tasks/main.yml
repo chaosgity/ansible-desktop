@@ -15,4 +15,5 @@
   pacman:
     name:
       - mpv
+      - 7zip
     state: present
