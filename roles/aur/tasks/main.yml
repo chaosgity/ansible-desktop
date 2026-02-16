@@ -13,11 +13,3 @@
         create: yes
         mode: 0644
         validate: "visudo -cf %s"
-
-- name: install AUR helper
-  aur:
-    name: trizen
-    use: makepkg
-    state: present
-  become: yes
-  become_user: aur_builder
