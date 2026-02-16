@@ -25,4 +25,3 @@
   aur:
     name: trizen
     use: makepkg
-    skip_installed: true
