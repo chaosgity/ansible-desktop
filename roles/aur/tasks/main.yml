@@ -13,8 +13,9 @@
         create: yes
 
 - name: install AUR helper
+  become: yes
   become_user: aur_builder
   kewlfft.aur.aur:
-    name: yay
+    name: trizen
     use: makepkg
     state: present
