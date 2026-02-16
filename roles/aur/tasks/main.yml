@@ -1,6 +1,5 @@
 ---
 - name: create aur_builder user
-  become: yes
   block:
     - ansible.builtin.user:
         name: aur_builder
@@ -14,14 +13,8 @@
         mode: 0644
         validate: /usr/sbin/visudo -cf %s
 
-- name: add sudo conft for aur
-  tags: always
-  lineinfile:
-    path: /etc/sudoers
-    line: "chaos ALL=(ALL) NOPASSWD: /usr/bin/pacman"
-
 - name: install AUR helper
-  become: no
+  become_usr: aur_builder
   aur:
     name: trizen
     use: makepkg
