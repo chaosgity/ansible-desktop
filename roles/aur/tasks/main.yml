@@ -14,7 +14,7 @@
         validate: /usr/sbin/visudo -cf %s
 
 - name: install AUR helper
-  become_usr: aur_builder
+  become_user: aur_builder
   aur:
     name: trizen
     use: makepkg
