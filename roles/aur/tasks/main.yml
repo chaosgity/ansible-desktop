@@ -13,9 +13,8 @@
         create: yes
 
 - name: install AUR helper
-  become: yes
   become_user: aur_builder
   kewlfft.aur.aur:
-    name: yay
+    name: paru
     use: makepkg
     state: present
