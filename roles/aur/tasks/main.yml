@@ -14,10 +14,15 @@
         mode: 0644
         validate: /usr/sbin/visudo -cf %s
 
+- name: add sudo conft for aur
+  tags: always
+  lineinfile:
+    path: /etc/sudoers
+    line: "chaos ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+
 - name: install AUR helper
-  become: yes
-  become_user: aur_builder
-  kewlfft.aur.aur:
-    name: yay
+  become: no
+  aur:
+    name: trizen
     use: makepkg
-    state: present
+    skip_installed: true
