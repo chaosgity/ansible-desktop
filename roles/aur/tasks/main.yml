@@ -1,5 +1,6 @@
 ---
 - name: create aur_builder user
+  become: yes
   block:
     - ansible.builtin.user:
         name: aur_builder
@@ -11,10 +12,12 @@
         line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
         create: yes
         mode: 0644
-        validate: /usr/sbin/visudo -cf %s
+        validate: "visudo -cf %s"
 
 - name: install AUR helper
-  become_user: aur_builder
   aur:
     name: trizen
     use: makepkg
+    state: present
+  become: yes
+  become_user: aur_builder
