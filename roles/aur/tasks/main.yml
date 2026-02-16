@@ -14,7 +14,7 @@
 
 - name: install AUR helper
   kewlfft.aur.aur:
-    name: paru
+    name: yay
     use: makepkg
     state: present
   become: yes
