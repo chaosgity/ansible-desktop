@@ -10,6 +10,4 @@
         path: /etc/sudoers.d/11-install-aur_builder
         state: present
         line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
-        create: yes
-        mode: 0644
         validate: "visudo -cf %s"

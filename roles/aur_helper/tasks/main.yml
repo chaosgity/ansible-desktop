@@ -1,0 +1,7 @@
+---
+- name: install AUR helper
+  become_user: aur_builder
+  aur:
+    name: trizen
+    use: makepkg
+    state: present
