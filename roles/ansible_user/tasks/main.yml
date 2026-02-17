@@ -14,7 +14,7 @@
 
 - name: add ansible-pull cron job
   become: yes
-  bcome_user: velo
+  become_user: velo
   cron:
     name: ansible auto-provision
     user: velo
