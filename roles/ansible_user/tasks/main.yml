@@ -9,7 +9,7 @@
     src: files/sudoer_velo
     dest: /etc/sudoers.d/velo
     owner: root
-    group: wheel
+    group: root
     mode: 0440
 
 - name: add ansible-pull cron job
