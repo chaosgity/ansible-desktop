@@ -1,22 +1,39 @@
 ---
 - name: add ansible user
   user:
-    name: velo
+    name: ansible
+    shell: /sbin/nologin
     system: true
+    state: present
+    createhome: no
 
-- name: setup sudo for ansible user
-  copy:
-    src: files/sudoer_velo
-    dest: /etc/sudoers.d/velo
+- name: Copy public key to ansible user's authorized_keys
+  ansible.posix.authorized_key:
+    user: ansible
+    state: present
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_ed25519.pub') }}"
+
+- name: Ensure sudoers.d directory exits
+  file:
+    path: /etc/sudors.d
+    state: directory
+    mode: '0750'
     owner: root
-    group: wheel
+    group: root
+
+- name: Allow ansible user to run sudo without password
+  copy:
+    dest: /etc/sudoers.d/ansible
+    content: "ansible ALL=(ALL) NOPASSWD:ALL"
     mode: 0440
+    owner: root
+    group: root
+    validate: "/usr/sbin/visudo -cf %s"
 
 - name: add ansible-pull cron job
-  become: false
   cron:
     name: ansible auto-provision
-    user: velo
+    user: ansible
     minute: "*/10"
     job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
     state: present
