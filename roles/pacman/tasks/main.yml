@@ -1,4 +1,3 @@
----
 - name: configure pacman
   block:
     - lineinfile:

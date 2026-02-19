@@ -16,6 +16,7 @@
         state: present
 
   roles:
+    - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
     - { role: cronie, tags: cronie }

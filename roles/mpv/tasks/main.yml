@@ -1,5 +1,3 @@
----
-
 - name: create mpv config dir
   file:
    path: "/home/{{ user_name }}/.config/mpv"

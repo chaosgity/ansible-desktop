@@ -1,4 +1,3 @@
----
 - name: enable cronie
   systemd_service:
     name: cronie.service
