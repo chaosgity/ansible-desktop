@@ -19,7 +19,6 @@
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
     - { role: cronie, tags: cronie }
-    - { role: ansible_user, tags: ansible_user }
     - { role: base, tags: base }
     - { role: bash, tag: bash }
     - { role: desktop, tags: desktop }
