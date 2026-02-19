@@ -1,0 +1,5 @@
+- name: Install openssh
+  community.general.pacman:
+    name: openssh
+    state: present
+  notify: Restart sshd

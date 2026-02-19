@@ -1,0 +1,3 @@
+- name: OpenSSH
+  ansible.builtin.import_tasks: openssh.yml
+  tags: openssh
