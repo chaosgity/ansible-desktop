@@ -2,10 +2,8 @@
 - name: add ansible user
   user:
     name: ansible
-    shell: /sbin/nologin
     system: true
     state: present
-    createhome: yes
 
 - name: Ensure sudoers.d directory exits
   file:
