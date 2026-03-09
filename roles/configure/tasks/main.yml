@@ -1,3 +1,7 @@
 - name: OpenSSH
   ansible.builtin.import_tasks: openssh.yml
   tags: openssh
+
+- name: Install paru AUR helper
+  ansible.builtin.import_tasks: paru.yml
+  tags: paru
