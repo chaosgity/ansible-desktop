@@ -1,57 +1,57 @@
 - name: copy bashrc file
   copy:
     src: files/bashrc
-    dest: "/home/{{ user_name }}/.bashrc"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.bashrc
+    owner: chaos
+    group: chaos
 
 - name: copy bash_profile file
   copy:
     src: files/bash_profile
-    dest: "/home/{{ user_name }}/.bash_profile"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.bash_profile
+    owner: chaos
+    group: chaos
 
 - name: copy inputrc file
   copy:
     src: files/inputrc
-    dest: "/home/{{ user_name }}/.inputrc"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.inputrc
+    owner: chaos
+    group: chaos
 
 - name: copy gitignore file
   copy:
     src: files/gitignore
-    dest: "/home/{{ user_name }}/.gitignore"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.gitignore
+    owner: chaos
+    group: chaos
 
 - name: copy aliases file
   copy:
     src: files/aliases
-    dest: "/home/{{ user_name }}/.aliases"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.aliases
+    owner: chaos
+    group: chaos
 
 - name: create bash_functions dir
   file:
-    path: "/home/{{ user_name }}/.bash_functions"
+    path: /home/chaos/.bash_functions
     state: directory
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    owner: chaos
+    group: chaos
 
 - name: copy bash_functions file
   copy:
     src: files/flavor-light
-    dest: "/home/{{ user_name }}/.bash_functions/flavor-light"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.bash_functions/flavor-light
+    owner: chaos
+    group: chaos
 
 - name: copy bash_functions file
   copy:
     src: files/yazi-bash-wrapper
-    dest: "/home/{{ user_name }}/.bash_functions/yazi-bash-wrapper"
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
+    dest: /home/chaos/.bash_functions/yazi-bash-wrapper
+    owner: chaos
+    group: chaos
 
 

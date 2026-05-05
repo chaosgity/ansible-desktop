@@ -1,5 +1,5 @@
 - name: enable toolchains
-  become_user: "{{ user_name }}"
+  become_user: chaos
   shell: |
     chmod 764 $HOME/.ansible/tmp
     rustup default stable
