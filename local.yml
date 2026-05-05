@@ -15,6 +15,28 @@
         name: reflector
         state: present
 
+    - name: Create the aur_builder user
+      ansible.builtin.user:
+        name: aur_builder
+        group: wheel
+        create_home: yes
+
+    - name: Configure sudoers for aur_builder
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/11-install-aur_builder
+        line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+        create: yes
+        mode: 0644
+        validate: 'visudo -cf %s'
+
+    - name: Install paru using makepkg
+      kewlfft.aur.aur:
+        name: paru
+        use: makepkg
+        state: present
+      become: yes
+      become_user: aur_builder
+
   roles:
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
