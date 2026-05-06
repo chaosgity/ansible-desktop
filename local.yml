@@ -8,7 +8,7 @@
     # Fix full /tmp when installing lots of AUR
     - name: temp increase /tmp size
       tags: always
-      shell: mount -o remount,size=5G /tmp
+      shell: mount -o remount,size=5G,noatime /tmp
 
     - name: install reflector package
       pacman:
@@ -42,12 +42,12 @@
         - name: Clone yay repository
           ansible.builtin.git:
             repo: https://aur.archlinux.org/yay-bin.git
-            dest: /tmp/yay-bin
+            dest: /tmp/.ansible-aurbuilder/tmp/yay-bin
         
         - name: Build and install yay
           ansible.builtin.command: makepkg -si --noconfirm
           args:
-            chdir: /tmp/yay-bin
+            chdir: /tmp/.ansible-aurbuilder/tmp/yay-bin
           changed_when: true  
 
 
