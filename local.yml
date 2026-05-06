@@ -5,10 +5,24 @@
 
   pre_tasks:
 
+    - name: Allow aurbuilder to use pacman without password
+       ansible.builtin.lineinfile:
+         path: /etc/sudoers.d/aurbuilder
+         line: "aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+         create: true
+         mode: '0440'
+         validate: 'visudo -cf %s'
+
     # Fix full /tmp when installing lots of AUR
     - name: temp increase /tmp size
-      tags: always
-      shell: mount -o remount,size=5G,noatime /tmp
+       tags: always
+       shell: mount -o remount,size=5G,noatime /tmp
+         
+    - name: create tmp for aurbuilder
+      owner: aurbuilder
+        shell: |
+          mkdir /tmp/.ansible-aurbuilder/tmp
+          chmod 764 /tmp/.ansible-aurbuilder/tmp
 
     - name: install reflector package
       pacman:
@@ -21,14 +35,6 @@
         groups: wheel
         create_home: true
     
-    - name: Allow aurbuilder to use pacman without password
-      ansible.builtin.lineinfile:
-        path: /etc/sudoers.d/aurbuilder
-        line: "aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
-        create: true
-        mode: '0440'
-        validate: 'visudo -cf %s'
-
     - name: Check if yay is installad
       ansible.builtin.command: which yay
       register: yay_check
