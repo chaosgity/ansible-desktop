@@ -18,12 +18,12 @@
 #        name: aurbuilder
 #        groups: wheel
 #        create_home: true
-
-     # Fix full /tmp when installing lots of AUR
-    - name: temp increase /tmp size
-       tags: always
-       shell: mount -o remount,size=5G,noatime /tmp
-         
+#
+#     # Fix full /tmp when installing lots of AUR
+#    - name: temp increase /tmp size
+#       tags: always
+#       shell: mount -o remount,size=5G,noatime /tmp
+#         
 #    - name: create tmp for aurbuilder
 #      owner: aurbuilder
 #        shell: |
