@@ -13,7 +13,13 @@
          mode: '0440'
          validate: 'visudo -cf %s'
 
-    # Fix full /tmp when installing lots of AUR
+    - name: Create AUR builder user
+      ansible.builtin.user:
+        name: aurbuilder
+        groups: wheel
+        create_home: true
+
+     # Fix full /tmp when installing lots of AUR
     - name: temp increase /tmp size
        tags: always
        shell: mount -o remount,size=5G,noatime /tmp
@@ -28,13 +34,7 @@
       pacman:
         name: reflector
         state: present
-
-    - name: Create AUR builder user
-      ansible.builtin.user:
-        name: aurbuilder
-        groups: wheel
-        create_home: true
-    
+   
     - name: Check if yay is installad
       ansible.builtin.command: which yay
       register: yay_check
