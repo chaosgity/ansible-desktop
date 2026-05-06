@@ -2,6 +2,7 @@
 - hosts: localhost
   connection: local
   become: true
+  become_method: sudo
 
   pre_tasks:
 
@@ -37,7 +38,6 @@
 
     - name: Install yay AUR helper
       when: yay_check.rc != 0
-      become: false
       become_user: aurbuilder
       block:
         - name: Clone yay repository
