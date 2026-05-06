@@ -37,6 +37,7 @@
 
     - name: Install yay AUR helper
       when: yay_check.rc != 0
+      become_method: runuser
       become_user: aurbuilder
       block:
         - name: Clone yay repository
