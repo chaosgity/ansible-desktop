@@ -20,13 +20,15 @@
       groups: wheel
       create_home: true
 
+
+
   - name: Install paru
     aur:
       name: paru
       use: makepkg
       state: present
     become: yes
-    become_user: aur_builder
+    become_user: aurbuilder
 
 #     # Fix full /tmp when installing lots of AUR
 #    - name: temp increase /tmp size
