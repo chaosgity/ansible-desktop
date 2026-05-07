@@ -20,7 +20,11 @@
       groups: wheel
       create_home: true
 
-
+  - name: create tmp for aurbuilder
+    owner: aurbuilder
+      shell: |
+        mkdir /tmp/.aurbuilder/tmp
+        chmod 764 /tmp/.aurbuilder/tmp
 
   - name: Install paru
     aur:
@@ -35,12 +39,6 @@
 #       tags: always
 #       shell: mount -o remount,size=5G,noatime /tmp
 #         
-#    - name: create tmp for aurbuilder
-#      owner: aurbuilder
-#        shell: |
-#          mkdir /tmp/.ansible-aurbuilder/tmp
-#          chmod 764 /tmp/.ansible-aurbuilder/tmp
-
   - name: install reflector package
     pacman:
       name: reflector
