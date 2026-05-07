@@ -20,10 +20,9 @@
       groups: wheel
       create_home: true
 
-
-  - name: Install paru
+  - name: Install yay
     aur:
-      name: paru
+      name: yay
       use: makepkg
       state: present
     become: yes
