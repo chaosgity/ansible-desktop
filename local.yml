@@ -20,11 +20,6 @@
       groups: wheel
       create_home: true
 
-  - name: create tmp for aurbuilder
-    owner: aurbuilder
-      shell: |
-        mkdir /tmp/.aurbuilder/tmp
-        chmod 764 /tmp/.aurbuilder/tmp
 
   - name: Install paru
     aur:
