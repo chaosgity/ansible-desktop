@@ -7,7 +7,7 @@
     extra_opts:
       - --strip-components=1
     mode: "0755"
-    become: true
+  become: true
 
 - name: Create config dir
   ansible.builtin.file:
