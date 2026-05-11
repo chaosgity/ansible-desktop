@@ -7,6 +7,6 @@
 
 - name: Install AUR packages
   ansible.builtin.command: |
-    yay --noconfirm --nopregressbar --cleanafter --removemake --needed --sync "{{ item }}"
+    yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
     - downgrade
