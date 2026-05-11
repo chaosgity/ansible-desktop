@@ -1,4 +1,4 @@
-- nacme: Install yay
+- name: Install yay
   ansible.builtin.unarchive:
     src: https://github.com/Jguer/yay/releases/download/v12.5.7/yay_12.5.7_x86_64.tar.gz
     dest: /usr/local/bin
