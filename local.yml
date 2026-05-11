@@ -25,14 +25,16 @@
       name: yay
       use: makepkg
       state: present
-    become: false
+    become: true
+    become_method: sudo
     become_user: aurbuilder
+    become_ask_pass: false
 
 #     # Fix full /tmp when installing lots of AUR
 #    - name: temp increase /tmp size
 #       tags: always
 #       shell: mount -o remount,size=5G,noatime /tmp
-#         
+         
   - name: install reflector package
     pacman:
       name: reflector
