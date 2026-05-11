@@ -1,6 +1,6 @@
 - name: Install paru
   ansible.builtin.unarchive:
-    src: https://github.com/Morganamilo/paru/releases/download/v2.1.0/paru-2.1.0-x86_64.tar.zst
+    src: https://github.com/Morganamilo/paru/releases/download/v2.1.0/paru-v2.1.0-x86_64.tar.zst
     dest: /usr/local/bin
     remote_src: true
     include: paru-2.1.0-x86_64/paru
