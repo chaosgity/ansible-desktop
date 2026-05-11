@@ -1,0 +1,26 @@
+- name: Install paru
+  ansible.builtin.unarchive:
+    src: https://github.com/Morganamile/paru/releases/download/v2.1.0/paru-2.1.0-x86_64.tar.zst
+    dest: /usr/local/bin
+    remote_src: true
+    include: paru-2.1.0-x86_64/paru
+    extra_opts:
+      - --strip-components=1
+    mode: "0755"
+  become: true
+
+#- name: Create config dir
+#  ansible.builtin.file:
+#    path: /home/chaos/.config/yay
+#    state: directory
+#    owner: chaos
+#    group: chaos
+#    mode: "0755"
+#
+#- name: Copy yay config file
+#  ansible.builtin.copy:
+#    src: files/config.json
+#    dest: /home/chaos/.config/yay/config.json
+#    owner: chaos
+#    group: chaos
+#    mode: "0644"

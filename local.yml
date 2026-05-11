@@ -64,6 +64,7 @@
 
   roles:
     - { role: yay, tags: yay }
+    - { role: paru, tags: paru }
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
