@@ -3,9 +3,7 @@
     src: https://github.com/Morganamilo/paru/releases/download/v2.1.0/paru-v2.1.0-x86_64.tar.zst
     dest: /usr/local/bin
     remote_src: true
-    include: paru-2.1.0-x86_64/paru
-    extra_opts:
-      - --strip-components=1
+    include: paru
     mode: "0755"
   become: true
 
