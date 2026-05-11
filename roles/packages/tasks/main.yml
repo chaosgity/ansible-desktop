@@ -1,3 +1,9 @@
+- name: Install AUR package
+  community.general.pacman:
+    name: downgrade
+    state: present
+    executable: yay
+    extra_args: --builddir /var/cache/yay
 #- name: Uprgrade the whole system
 #  community.general.pacman:
 #    upgrade: true
