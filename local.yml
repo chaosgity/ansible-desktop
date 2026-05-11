@@ -68,6 +68,7 @@
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
+    - { role: packages, tags: packages }
     - { role: cronie, tags: cronie }
     - { role: ansible_user, tags: ansible_user }
     - { role: base, tags: base }

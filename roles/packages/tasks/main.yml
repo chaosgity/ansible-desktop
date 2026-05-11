@@ -1,0 +1,12 @@
+- name: Uprgrade the whole system
+  community.general.pacman:
+    upgrade: true
+    executable: yay
+    update_cache: true
+    extra_args: --removemake --cleanafter --noconfirm
+
+- name: Install AUR packages
+  ansible.builtin.command: |
+    yay --noconfirm --nopregressbar --cleanafter --removemake --needed --sync "{{ item }}"
+  loop:
+    - downgrade
