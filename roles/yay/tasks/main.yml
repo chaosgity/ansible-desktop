@@ -1,26 +1,26 @@
-- name: Install yay
-  ansible.builtin.unarchive:
-    src: https://github.com/Jguer/yay/releases/download/v12.5.7/yay_12.5.7_x86_64.tar.gz
-    dest: /usr/local/bin
-    remote_src: true
-    include: yay_12.5.7_x86_64/yay
-    extra_opts:
-      - --strip-components=1
-    mode: "0755"
-  become: true
-
-- name: Create config dir
-  ansible.builtin.file:
-    path: /home/chaos/.config/yay
-    state: directory
-    owner: chaos
-    group: chaos
-    mode: "0755"
-
-- name: Copy yay config file
-  ansible.builtin.copy:
-    src: files/config.json
-    dest: /home/chaos/.config/yay/config.json
-    owner: chaos
-    group: chaos
-    mode: "0644"
+#- name: Install yay
+#  ansible.builtin.unarchive:
+#    src: https://github.com/Jguer/yay/releases/download/v12.5.7/yay_12.5.7_x86_64.tar.gz
+#    dest: /usr/local/bin
+#    remote_src: true
+#    include: yay_12.5.7_x86_64/yay
+#    extra_opts:
+#      - --strip-components=1
+#    mode: "0755"
+#  become: true
+#
+#- name: Create config dir
+#  ansible.builtin.file:
+#    path: /home/chaos/.config/yay
+#    state: directory
+#    owner: chaos
+#    group: chaos
+#    mode: "0755"
+#
+#- name: Copy yay config file
+#  ansible.builtin.copy:
+#    src: files/config.json
+#    dest: /home/chaos/.config/yay/config.json
+#    owner: chaos
+#    group: chaos
+#    mode: "0644"

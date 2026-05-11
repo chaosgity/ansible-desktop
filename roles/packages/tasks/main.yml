@@ -1,6 +1,6 @@
 - name: Install AUR package
   community.general.pacman:
-    name: downgrade
+    name: tt-ms-fonts
     state: present
     executable: yay
     extra_args: --builddir /var/cache/yay
