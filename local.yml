@@ -26,7 +26,6 @@
       use: makepkg
       state: present
     become: yes
-    become_flags: 'tty'
     become_user: aurbuilder
 
 #     # Fix full /tmp when installing lots of AUR
