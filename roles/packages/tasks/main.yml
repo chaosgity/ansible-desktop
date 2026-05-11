@@ -1,4 +1,6 @@
 - name: Install AUR package
+  become: yes
+  become_user: chaos
   community.general.pacman:
     name: tt-ms-fonts
     state: present
