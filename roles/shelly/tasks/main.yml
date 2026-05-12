@@ -1,7 +1,7 @@
 - name: Clone public Shelly Git repository
   become: true
   become_user: chaos
-  ansibe.builtin.git:
+  ansible.builtin.git:
     repo: "https://github.com/ZoeyErinBauer/Shelly-ALPM.git"
     dest: /home/chaos
     version: main
