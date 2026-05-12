@@ -1,0 +1,5 @@
+- name: Clone public Shelly Git repository
+  ansibe.builtin.git:
+    repo: https://github.com/ZoeyErinBauer/Shelly-ALPM.git
+    dest: /home/chaos
+    version: main
