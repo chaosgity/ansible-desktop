@@ -3,5 +3,5 @@
   become_user: chaos
   ansible.builtin.git:
     repo: "https://github.com/ZoeyErinBauer/Shelly-ALPM.git"
-    dest: /home/chaos
+    dest: /home/chaos/shelly
     version: main
