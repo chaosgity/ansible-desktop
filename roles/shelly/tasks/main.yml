@@ -2,6 +2,6 @@
   become: true
   become_user: chaos
   ansibe.builtin.git:
-    repo: https://github.com/ZoeyErinBauer/Shelly-ALPM.git
+    repo: "https://github.com/ZoeyErinBauer/Shelly-ALPM.git"
     dest: /home/chaos
     version: main
