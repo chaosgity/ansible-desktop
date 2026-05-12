@@ -3,3 +3,4 @@
     repo: https://github.com/ZoeyErinBauer/Shelly-ALPM.git
     dest: /home/chaos
     version: main
+  become_user: chaos  
