@@ -5,6 +5,7 @@
       - htop
       - python-passlib
       - udisks2
+      - dotnet-sdk
     state: present
 
 - name: install base packages (Rust CLI)

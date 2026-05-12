@@ -1,11 +1,11 @@
-- name: Install AUR package
-  become: yes
-  become_user: chaos
-  community.general.pacman:
-    name: tt-ms-fonts
-    state: present
-    executable: yay
-    extra_args: --builddir /var/cache/yay
+#- name: Install AUR package
+#  become: yes
+#  become_user: chaos
+#  community.general.pacman:
+#    name: tt-ms-fonts
+#    state: present
+#    executable: yay
+#    extra_args: --builddir /var/cache/yay
 #- name: Uprgrade the whole system
 #  community.general.pacman:
 #    upgrade: true
