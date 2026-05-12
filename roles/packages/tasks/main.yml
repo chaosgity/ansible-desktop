@@ -1,11 +1,12 @@
 - name: Install packages with Shell-CLI
-  become: true
-  become_user: root
   ansible.builtin.command: |
     shelly install "{{ item }}" --no-confirm
   loop:
     - htop
-
+  become: true
+  become_method: su
+  become_user: aurbuilder
+  become_flags: '-s /bin/sh'
 #- name: Install AUR package
 #  become: yes
 #  become_user: chaos
