@@ -8,3 +8,6 @@
 - name: Install shelly
   become: true
   ansible.builtin.command: /home/chaos/shelly/local-install.sh
+
+- name: Activate Shelly-CLI
+  ansible.builtin.command: shelly
