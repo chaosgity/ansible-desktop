@@ -1,8 +1,6 @@
 - name: Install packages with Shell-CLI
-  ansible.builtin.command: |
-    shelly install "{{ item }}" --no-confirm
-  loop:
-    - htop
+  ansible.builtin.command: shelly install htop --no-confirm
+  tty: true
   become: true
   become_method: su
   become_user: root
