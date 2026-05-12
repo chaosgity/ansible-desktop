@@ -1,7 +1,7 @@
 - name: Install packages with Shell-CLI
   become: true
-  become_user: chaos
-  ansible.builtin.shell: |
+  become_user: root
+  ansible.builtin.command: |
     shelly install "{{ item }}" --no-confirm
   loop:
     - htop
