@@ -11,4 +11,6 @@
 #  become: yes
 #  become_user: aurbuilder
 #
-#- aur: name=htop
+- aur: name=ttf-ms-fonts
+  become: yes
+  become_user: aur_builder
