@@ -12,9 +12,6 @@
   become: yes
   become_user: aurbuilder
 
-- aur:
-    use: yay
-    name:
-      - htop
+- aur: name=htop
   become: yes
   become_user: aurbuilder
