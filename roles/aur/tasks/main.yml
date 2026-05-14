@@ -13,6 +13,7 @@
   become_user: aurbuilder
 
 - aur:
+    use: yay
     name:
       - htop
       - downgrade
