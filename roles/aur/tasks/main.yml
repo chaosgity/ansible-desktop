@@ -13,5 +13,3 @@
   become_user: aurbuilder
 
 - aur: name=htop
-  become: yes
-  become_user: aurbuilder
