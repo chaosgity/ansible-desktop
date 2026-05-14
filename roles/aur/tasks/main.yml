@@ -15,7 +15,6 @@
 - aur:
     use: yay
     name:
-      - htop
-      - downgrade
+      - ttf-ms-fonts
   become: yes
   become_user: aurbuilder
