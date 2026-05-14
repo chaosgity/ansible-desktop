@@ -1,5 +1,20 @@
-#- name: Install packages with Shell-CLI
-#  ansible.builtin.command: shelly install htop --no-confirm
+- user: name=aurbuilder
+
+- lineinfile:
+    path: /etc/sudoers.d/aurbuilder-allow-to-sudo-shelly
+    line: "{{ item.line }}"
+    state: present
+    validate: /usr/sbin/visudo -cf %s
+    create: yes
+  loop:  
+    - { line: 'aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/shelly' }
+    - { line: 'Defaults:aurbuilder !requiretty' }
+
+- name: Install packages with Shell-CLI
+  ansible.builtin.command: shelly install ventoy-bin --no-confirm
+  become: yes
+  become_user: aurbuilder
+
 #- name: Install AUR package
 #  become: yes
 #  become_user: chaos
@@ -16,3 +31,10 @@
 #    extra_args: --removemake --cleanafter --noconfirm
 #
 
+#- aur: name=yay
+#  become: yes
+#  become_user: aurbuilder
+#
+#- aur: name=ventoy-bin
+#  become: yes
+#  become_user: aur_builder
