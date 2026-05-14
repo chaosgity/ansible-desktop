@@ -1,15 +1,14 @@
-- user:
-    name: aurbuilder
-    group: wheel
+- user: name=aur_builder
 
 - lineinfile:
-    path: /etc/sudoers.d/11-install-aurbuilder
-    line: 'aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
+    state: present
+    line: "aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+    validate: /usr/sbin/visudo -cf %s
     create: yes
-    validate: 'visudo -cf %s'
 
-- aur: name=yay
-  become: yes
-  become_user: aurbuilder
-
-- aur: name=htop
+#- aur: name=yay
+#  become: yes
+#  become_user: aurbuilder
+#
+#- aur: name=htop
