@@ -12,4 +12,7 @@
   become: yes
   become_user: aurbuilder
 
-- aur: name=htop  
+- aur:
+    name:
+      - htop
+      - downgrade
