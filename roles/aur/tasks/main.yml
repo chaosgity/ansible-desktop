@@ -2,15 +2,18 @@
 
 - lineinfile:
     path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
+    line: "{{ item.line }}"
     state: present
-    line: "aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
     validate: /usr/sbin/visudo -cf %s
     create: yes
+  loop:  
+    - { line: 'aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman' }
+    - { line: 'Defaults:aur_builder !requiretty' }
 
 #- aur: name=yay
 #  become: yes
 #  become_user: aurbuilder
 #
-- aur: name=ttf-ms-fonts
-  become: yes
-  become_user: aur_builder
+#- aur: name=ttf-ms-fonts
+#  become: yes
+#  become_user: aur_builder
