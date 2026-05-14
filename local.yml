@@ -5,8 +5,12 @@
 
   pre_tasks:
 
+#  - name: Create AUR builder user
+#    ansible.builtin.user:
+#      name: aurbuilder
+#      groups: wheel
+#
 #  - name: Allow aurbuilder to use pacman without password
-#    become: yes
 #    ansible.builtin.lineinfile:
 #       path: /etc/sudoers.d/aurbuilder
 #       line: 'aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
@@ -14,12 +18,7 @@
 #       mode: '0644'
 #       validate: 'visudo -cf %s'
 #
-#  - name: Create AUR builder user
-#    ansible.builtin.user:
-#      name: aurbuilder
-#      groups: wheel
-#      create_home: true
-#
+
 #  - name: Install downgrade
 #    aur:
 #      name: downgrade
@@ -61,9 +60,10 @@
 
 
   roles:
+    - { role: aur, tags: aur }
     - { role: yay, tags: yay }
     - { role: paru, tags: paru }
-    - { role: shelly, tags shelly}
+    - { role: shelly, tags: shelly}
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }

@@ -1,0 +1,15 @@
+- user:
+    name: aurbuilder
+    group: wheel
+
+- lineinfile:
+    path: /etc/sudoers.d/11-install-aurbuilder
+    line: 'aurbuilder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+
+- aur: name=yay use=makepkg skip_installed=true
+  become: yes
+  become_user: aurbuilder
+
+- aur: name=htop  

@@ -1,5 +1,5 @@
-- name: Install packages with Shell-CLI
-  ansible.builtin.command: shelly install htop --no-confirm
+#- name: Install packages with Shell-CLI
+#  ansible.builtin.command: shelly install htop --no-confirm
 #- name: Install AUR package
 #  become: yes
 #  become_user: chaos
