@@ -8,7 +8,7 @@
     create: yes
     validate: 'visudo -cf %s'
 
-- aur: name=yay use=makepkg skip_installed=true
+- aur: name=yay
   become: yes
   become_user: aurbuilder
 
