@@ -16,3 +16,20 @@
       - mpv
       - 7zip
     state: present
+
+-  name: Install niri
+   pacman:
+     name:
+       - niri
+       - fuzzel
+       - mako
+       - waybar
+       - xdg-desktop-portal-gtk
+       - xdg-desktop-portal-gnome
+       - alacritty
+       - swaybg
+       - swayidle
+       - swaylock
+       - xwayland-satelite
+       - udiskie
+       - ironbar
