@@ -2,6 +2,7 @@
   pacman:
     name:
       - fzf
+      - less
       - htop
       - python-passlib
       - udisks2
