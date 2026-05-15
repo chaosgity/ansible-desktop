@@ -1,31 +1,30 @@
----
-- name: add ansible user
-  user:
-    name: ansible
-    system: true
-    state: present
-
-- name: Ensure sudoers.d directory exits
-  file:
-    path: /etc/sudors.d
-    state: directory
-    mode: '0750'
-    owner: root
-    group: root
-
-- name: Allow ansible user to run sudo without password
-  copy:
-    dest: /etc/sudoers.d/ansible
-    content: "ansible ALL=(ALL) NOPASSWD:ALL"
-    mode: 0440
-    owner: root
-    group: root
-    validate: "/usr/sbin/visudo -cf %s"
-
-- name: add ansible-pull cron job
-  cron:
-    name: ansible auto-provision
-    user: ansible
-    minute: "*/10"
-    job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
-    state: present
+#- name: add ansible user
+#  user:
+#    name: ansible
+#    system: true
+#    state: present
+#
+#- name: Ensure sudoers.d directory exits
+#  file:
+#    path: /etc/sudors.d
+#    state: directory
+#    mode: '0750'
+#    owner: root
+#    group: root
+#
+#- name: Allow ansible user to run sudo without password
+#  copy:
+#    dest: /etc/sudoers.d/ansible
+#    content: "ansible ALL=(ALL) NOPASSWD:ALL"
+#    mode: 0440
+#    owner: root
+#    group: root
+#    validate: "/usr/sbin/visudo -cf %s"
+#
+#- name: add ansible-pull cron job
+#  cron:
+#    name: ansible auto-provision
+#    user: ansible
+#    minute: "*/10"
+#    job: ansible-pull -o -U https://github.com/chaosgity/ansible-desktop.git
+#    state: present
