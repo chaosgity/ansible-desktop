@@ -11,7 +11,7 @@
       state: present
    
   roles:
-#   - { role: yay, tags: yay }
+    - { role: yay, tags: yay }
 #   - { role: shelly, tags: shelly}
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
