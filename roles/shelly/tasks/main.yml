@@ -1,13 +1,13 @@
-#- name: Clone public Shelly Git repository
-#  become: true
-#  become_user: chaos
-#  ansible.builtin.git:
-#    repo: "https://github.com/ZoeyErinBauer/Shelly-ALPM.git"
-#    dest: /home/chaos/shelly
-#  
-#- name: Install shelly
-#  become: true
-#  ansible.builtin.command: /home/chaos/shelly/local-install.sh
+- name: Clone public Shelly Git repository
+  become: true
+  become_user: chaos
+  ansible.builtin.git:
+    repo: "https://github.com/ZoeyErinBauer/Shelly-ALPM.git"
+    dest: /home/chaos/shelly
+  
+- name: Install shelly
+  become: true
+  ansible.builtin.command: /home/chaos/shelly/local-install.sh
 #
 #- name: Activate Shelly-CLI
 #  ansible.builtin.command: shelly
