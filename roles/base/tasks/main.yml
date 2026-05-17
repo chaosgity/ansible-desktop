@@ -1,12 +1,15 @@
 - name: install base packages
   pacman:
     name:
+      - dotnet-sdk
       - fzf
-      - less
       - htop
+      - less
+      - man-paged
+      - man-db
       - python-passlib
       - udisks2
-      - dotnet-sdk
+      - wl-clipboard
     state: present
 
 - name: install base packages (Rust CLI)
