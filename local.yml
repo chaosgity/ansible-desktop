@@ -22,4 +22,5 @@
     - { role: bash, tag: bash }
     - { role: desktop, tags: desktop }
     - { role: niri, tags: niri }
+    - { role: alacritty, tags: alacritty }
     - { role: mpv, tag: mpv }
