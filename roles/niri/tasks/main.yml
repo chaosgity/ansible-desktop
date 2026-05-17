@@ -2,12 +2,12 @@
   file:
     path: "{{ ansible_env.HOME }}/.config/niri"
     state: directory
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: chaos
+    group: chaos
 
 - name: copy niri config file
   copy:
     src: config.kdl
     dest: "{{ ansible_env.HOME }}/.config/niri"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: chaos
+    group: chaos
