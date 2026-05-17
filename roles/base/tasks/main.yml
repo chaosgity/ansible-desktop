@@ -5,7 +5,7 @@
       - fzf
       - htop
       - less
-      - man-paged
+      - man-pages
       - man-db
       - python-passlib
       - udisks2
