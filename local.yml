@@ -21,4 +21,5 @@
     - { role: base, tags: base }
     - { role: bash, tag: bash }
     - { role: desktop, tags: desktop }
+    - { role: niri, tags: niri }
     - { role: mpv, tag: mpv }
