@@ -2,8 +2,8 @@
   file:
     path: /home/chaos/.config/alacritty
     state: directory
-    owner: chaos
-    group: chaos
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: copy alacritty config file
   copy:
