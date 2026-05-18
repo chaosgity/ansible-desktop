@@ -5,9 +5,9 @@
     owner: chaos
     group: chaos
 
-#- name: copy niri config file
-#  copy:
-#    src: config.kdl
-#    dest: "{{ ansible_env.HOME }}/.config/niri"
-#    owner: chaos
-#    group: chaos
+- name: copy niri config file
+  copy:
+    src: config.kdl
+    dest: "{{ ansible_env.HOME }}/.config/niri"
+    owner: chaos
+    group: chaos
