@@ -1,6 +1,6 @@
 - name: create alacritty config dir
   file:
-    path: "{{ ansible_env.HOME }}.config/alacritty"
+    path: /home/chaos/.config/alacritty
     state: directory
     owner: chaos
     group: chaos
@@ -8,6 +8,6 @@
 - name: copy alacritty config file
   copy:
     src: alacritty.toml
-    dest: "{{ ansible_env.HOME }}/.config/alacritty"
+    dest: /home/chaos/.config/alacritty
     owner: chaos
     group: chaos

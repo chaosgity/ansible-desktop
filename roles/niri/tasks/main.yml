@@ -1,6 +1,6 @@
 - name: create niri config dir
   file:
-    path: "{{ ansible_env.HOME }}/.config/niri"
+    path: /home/chaos/.config/niri
     state: directory
     owner: chaos
     group: chaos
@@ -8,6 +8,6 @@
 - name: copy niri config file
   copy:
     src: config.kdl
-    dest: "{{ ansible_env.HOME }}/.config/niri"
+    dest: /home/chaos/.config/niri
     owner: chaos
     group: chaos
