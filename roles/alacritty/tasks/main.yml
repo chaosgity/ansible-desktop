@@ -1,6 +1,6 @@
 - name: create alacritty config dir
   file:
-    path: /home/chaos/.config/alacritty
+    path: "/home/{{ user }}/.config/alacritty"
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -8,6 +8,6 @@
 - name: copy alacritty config file
   copy:
     src: alacritty.toml
-    dest: /home/chaos/.config/alacritty
-    owner: chaos
-    group: chaos
+    dest: "/home/{{ user }}/.config/alacritty"
+    owner: "{{ user }}"
+    group: "{{ user }}"
