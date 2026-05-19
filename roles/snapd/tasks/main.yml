@@ -23,5 +23,11 @@
 
 - name: Install snap package
   community.general.snap:
-    name: htop
+    name:
+      - brave
+      - chromium
+      - firefox
+      - htop
+      - libreoffice
+      - vivaldi
     state: present   
