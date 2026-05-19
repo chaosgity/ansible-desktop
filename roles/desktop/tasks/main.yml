@@ -34,10 +34,13 @@
        - udiskie
        - ironbar
 
-- name: install handlr for default applications
+- name: install packages for managing applications
   community.general.pacman:
     name:
       - handlr-regex
+      - perl-file-mimeinfo
+      - xdg-user-dirs
+      - xdg-utils
     state: present
 
 
