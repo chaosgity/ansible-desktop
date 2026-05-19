@@ -3,7 +3,6 @@
     name:
       - dotnet-sdk
       - fzf
-      - htop
       - less
       - man-pages
       - man-db
