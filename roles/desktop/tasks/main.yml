@@ -33,3 +33,11 @@
        - xwayland-satellite
        - udiskie
        - ironbar
+
+- name: install handlr for default applications
+  community.general.pacman:
+    name:
+      - handlr-regex
+    state: present
+
+
