@@ -11,7 +11,7 @@
     state: present
 
 - name: install applications packages
-  communtiy.general.pacman:
+  community.general.pacman:
     name:
       - mpv
       - 7zip
