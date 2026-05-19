@@ -1,5 +1,5 @@
 - name: install base packages
-  pacman:
+  community.general.pacman:
     name:
       - dotnet-sdk
       - fzf
@@ -12,7 +12,7 @@
     state: present
 
 - name: install base packages (Rust CLI)
-  pacman:
+  community.general.pacman:
     name:
       - bat
       - bat-extras
@@ -27,10 +27,11 @@
     state: present
 
 - name: install base packages (apparmor)
-  pacman:
+  community.general.pacman:
     name:
       - apparmor
       - audit
       - python-notify2
       - python-psutil
+      - tk
     state: present

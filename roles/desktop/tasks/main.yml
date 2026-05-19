@@ -1,5 +1,5 @@
 - name: install audio packages
-  pacman:
+  community.general.pacman:
     name:
       - pipewire
       - pipewire-pulse
@@ -11,14 +11,14 @@
     state: present
 
 - name: install applications packages
-  pacman:
+  communtiy.general.pacman:
     name:
       - mpv
       - 7zip
     state: present
 
 -  name: Install niri
-   pacman:
+   community.general.pacman:
      name:
        - niri
        - fuzzel
