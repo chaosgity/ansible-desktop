@@ -11,8 +11,8 @@
       state: present
    
   roles:
-    - { role: yay, tags: yay }
-    - { role: shelly, tags: shelly}
+#    - { role: yay, tags: yay }
+#    - { role: shelly, tags: shelly}
     - { role: configure, tags: configure }
     - { role: pacman, tags: pacman }
     - { role: rustup, tags: rustup }
@@ -24,6 +24,6 @@
     - { role: niri, tags: niri }
     - { role: alacritty, tags: alacritty }
     - { role: mpv, tag: mpv }
-    - { role: walker, tag: walker }
-    - { role: ashell, tag: ashell }
+#    - { role: walker, tag: walker }
+#    - { role: ashell, tag: ashell }
     - { role: snapd, tag: snapd }
