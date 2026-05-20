@@ -30,4 +30,5 @@
       - htop
       - libreoffice
       - vivaldi
+      - okular
     state: present   
