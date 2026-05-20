@@ -6,7 +6,9 @@
       - less
       - man-pages
       - man-db
+      - plocate
       - python-passlib
+      - udiskie
       - udisks2
       - wl-clipboard
     state: present

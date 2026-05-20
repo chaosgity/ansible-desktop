@@ -10,4 +10,6 @@ alias dh='tail -n 1 ~/,bash_history | tee >(wc -c | xargs -I {} truncate ~/.bash
 alias cd='z'
 alias ssha='eval $(ssh-agent) && ssh-add'
 alias xdg-open='handlr open "$@"'
-alias gvfs-open='handlr open "$@"'
+alias gvfs-open='handlr open "$@"
+alias ha='handlr'
+alias hao='handlr open'
