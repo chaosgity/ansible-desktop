@@ -24,4 +24,5 @@
     - { role: niri, tags: niri }
     - { role: alacritty, tags: alacritty }
     - { role: mpv, tag: mpv }
+    - { role: walker, tag: walker }
     - { role: snapd, tag: snapd }
